@@ -8,6 +8,13 @@ import { FaChevronDown } from "react-icons/fa";
 import { BiSolidCategory } from "react-icons/bi";
 import { MenuContext } from "../../context/MenuContext";
 import { GoDash } from "react-icons/go";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+
 
 const MainLayout = ({ children }) => {
   const { open } = useContext(MenuContext);
@@ -16,37 +23,49 @@ const MainLayout = ({ children }) => {
       <MainHeader />
 
       <div className="flex justify-start items-start ">
-        <aside className="bg-white rounded-lg w-60 h-screen border border-gray-200">
-          <ul>
-            <li className="flex justify-start items-center hover:cursor-pointer hover:bg-blue-200 hover:text-blue-800 rounded-xl p-2">
+      
+        <aside className="bg-white rounded-lg absolute inset-y-0 left-0 border border-gray-200 shadow-sm w-2/12">
+        <div className="h-4 w-48 absolute left-16 top-4 ">
+        <img src="https://fervidsmart.com/dist/assets/img/logo/Fervid_Logo_svg.svg"></img>
+        </div>
+        <div className="flex justify-start items-center cursor-pointer  rounded-xl absolute top-20 left-10">
               <IoHomeSharp className="mr-2" />
               <Link href="/">Dashboard</Link>
-            </li>
-            <li className="flex flex-col justify-start items-start p-2">
-              <div className="w-full flex flex-row justify-start items-center">
-                <FaShoppingCart className="mr-2" />
-                <a href="/Products" className="flex-1">
-                  Products
-                </a>
-                <FaChevronDown />
-              </div>
-            </li>
-            <ul className="ml-8 mt-4">
-              <li className="flex justify-center items-center gap-1  hover:bg-blue-200 hover:text-blue-800 rounded-xl p-2">
-                <GoDash />
-                <Link href="/Products/ProductsList">Products List</Link>
-              </li>
-            </ul>
-            <li className="flex justify-start items-center hover:cursor-pointer hover:bg-blue-200 hover:text-blue-800 rounded-xl p-2">
-              <BiSolidCategory className="mr-2" />
-              <a href="/Categories" className="flex-1">
-                Categories
-              </a>
-              <FaChevronDown />
-            </li>
-          </ul>
+            </div>
+        <div className="absolute top-32 w-48 left-10">
+          <Accordion type="single" collapsible>
+  <AccordionItem value="item-1">
+    <AccordionTrigger>Products</AccordionTrigger>
+    <AccordionContent>
+     <a href="/Products/ProductsList"> Products List</a>
+    </AccordionContent>
+  </AccordionItem>
+  <AccordionItem value="item-2">
+    <AccordionTrigger>Categories</AccordionTrigger>
+    <AccordionContent>
+      <a href="https://google.com" className="cursor-pointer">Products </a>
+    </AccordionContent>
+  </AccordionItem>
+  <AccordionItem value="item-3">
+    <AccordionTrigger>Sales</AccordionTrigger>
+    <AccordionContent>
+      Yes. It adheres to the WAI-ARIA design pattern.
+    </AccordionContent>
+  </AccordionItem>
+  <AccordionItem value="item-4">
+    <AccordionTrigger>Purchases</AccordionTrigger>
+    <AccordionContent>
+      Yes. It adheres to the WAI-ARIA design pattern.
+    </AccordionContent>
+  </AccordionItem>
+</Accordion>
+
+
+          </div>
         </aside>
-        <main className="w-screen">{children}</main>
+        <div className="absolute inset-y-0 right-0 w-5/6 top-24">
+        <main >{children}</main>
+        </div>
       </div>
     </div>
   );

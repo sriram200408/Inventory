@@ -9,21 +9,21 @@ import LanguageSelectBox from "./LanguageSelectBox";
 const MainHeader = () => {
   const { toggle } = useContext(MenuContext);
   return (
+    <>
     <div className="bg-white flex  items-center px-4 h-12 mb-4">
-      <div onClick={toggle}>
-        <FaBars className="cursor-pointer" />
-      </div>
-      <div className="w-3/12 flex ml-10">
+      
+      <div className="w-2/6 flex absolute left-80 mt-5 ml-5">
         <Input placeholder="Search" />
       </div>
 
-      <div className="">
+      <div className="right-56 mt-3 absolute">
         <LanguageSelectBox />
       </div>
-      <div className="">
+      <div className=" absolute right-28 mt-3 ml-4">
         <SelectBox />
       </div>
     </div>
+    </>
   );
 };
 
