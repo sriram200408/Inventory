@@ -76,6 +76,7 @@ export const Products = [
     brand: "Ray-Ban",
     quantity: 1.0,
   },
+  // Add more products if needed to test pagination
 ];
 
 export function TableDemo() {
@@ -86,6 +87,8 @@ export function TableDemo() {
   const [sortedProducts, setSortedProducts] = useState(Products);
   const [sortConfig, setSortConfig] = useState({ key: "", direction: "" });
   const [searchQuery, setSearchQuery] = useState("");
+  const [currentPage, setCurrentPage] = useState(1);
+  const [itemsPerPage, setItemsPerPage] = useState(5);
 
   const handleSelectAll = () => {
     const newSelectAll = !selectAll;
@@ -122,6 +125,19 @@ export function TableDemo() {
     product.product.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
+  const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
+
+  const handleChangePage = (newPage) => {
+    if (newPage > 0 && newPage <= totalPages) {
+      setCurrentPage(newPage);
+    }
+  };
+
+  const paginatedProducts = filteredProducts.slice(
+    (currentPage - 1) * itemsPerPage,
+    currentPage * itemsPerPage
+  );
+
   return (
     <div>
       <input
@@ -131,8 +147,31 @@ export function TableDemo() {
         onChange={(e) => setSearchQuery(e.target.value)}
         className="mb-4 p-2 border border-gray-300 rounded"
       />
+      <div className="mb-4 flex justify-between">
+        <select
+          value={itemsPerPage}
+          onChange={(e) => {
+            setItemsPerPage(parseInt(e.target.value, 10));
+            setCurrentPage(1); // Reset to the first page when items per page changes
+          }}
+          className="p-2 border border-gray-300 rounded"
+        >
+          <option value={5}>5</option>
+          <option value={10}>10</option>
+          <option value={15}>15</option>
+        </select>
+        <span>
+          Showing{" "}
+          {Math.min(
+            (currentPage - 1) * itemsPerPage + 1,
+            filteredProducts.length
+          )}{" "}
+          to {Math.min(currentPage * itemsPerPage, filteredProducts.length)} of{" "}
+          {filteredProducts.length} products
+        </span>
+      </div>
       <Table>
-        <TableCaption>Product List</TableCaption>
+        <TableCaption></TableCaption>
         <TableHeader>
           <TableRow>
             <TableHead className="text-left">
@@ -147,7 +186,7 @@ export function TableDemo() {
               onClick={() => handleSort("product")}
             >
               Product
-              <RiArrowUpDownFill className="ml-1" />
+              <RiArrowUpDownFill className="ml-1 hover:cursor-pointer" />
             </TableHead>
             <TableHead>Code</TableHead>
             <TableHead>Category</TableHead>
@@ -157,7 +196,7 @@ export function TableDemo() {
           </TableRow>
         </TableHeader>
         <TableBody>
-          {filteredProducts.map((product, index) => (
+          {paginatedProducts.map((product, index) => (
             <TableRow key={product.code}>
               <TableCell>
                 <input
@@ -179,7 +218,25 @@ export function TableDemo() {
         </TableBody>
         <TableFooter>
           <TableRow>
-            <TableCell colSpan={7}></TableCell>
+            <TableCell colSpan={7} className="text-right">
+              <button
+                onClick={() => handleChangePage(currentPage - 1)}
+                disabled={currentPage === 1}
+                className="px-2 py-1 border border-gray-300 rounded mr-2"
+              >
+                Previous
+              </button>
+              <span>
+                Page {currentPage} of {totalPages}
+              </span>
+              <button
+                onClick={() => handleChangePage(currentPage + 1)}
+                disabled={currentPage === totalPages}
+                className="px-2 py-1 border border-gray-300 rounded ml-2"
+              >
+                Next
+              </button>
+            </TableCell>
           </TableRow>
         </TableFooter>
       </Table>
