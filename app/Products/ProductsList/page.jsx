@@ -1,5 +1,4 @@
 import React from "react";
-import { Input } from "@/components/ui/input";
 import {
   Pagination,
   PaginationContent,
@@ -17,9 +16,7 @@ const ProductsListPage = () => {
       <h1>Products List Page</h1>
       <br />
       <br />
-      <div className="w-3/12 flex mr-10">
-        <Input placeholder="Search.." />
-      </div>
+
       <TableDemo />
       <PaginationDemo />
     </div>
