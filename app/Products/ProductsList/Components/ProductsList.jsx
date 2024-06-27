@@ -12,8 +12,9 @@ import {
 } from "@/components/ui/table";
 import { RiArrowUpDownFill } from "react-icons/ri";
 
-const Products = [
+export const Products = [
   {
+    id: 1,
     product: "Organic cream",
     code: "INV001",
     price: 250.0,
@@ -22,6 +23,7 @@ const Products = [
     quantity: 2.0,
   },
   {
+    id: 2,
     product: "Umbrella",
     code: "INV002",
     price: 150.0,
@@ -30,6 +32,7 @@ const Products = [
     quantity: 1.0,
   },
   {
+    id: 3,
     product: "Coffe beans",
     code: "INV003",
     price: 350.0,
@@ -38,6 +41,7 @@ const Products = [
     quantity: 3.0,
   },
   {
+    id: 4,
     product: "Nike Shoes",
     code: "INV004",
     price: 450.0,
@@ -46,6 +50,7 @@ const Products = [
     quantity: 1.0,
   },
   {
+    id: 5,
     product: "Levis jeans",
     code: "INV005",
     price: 550.0,
@@ -54,6 +59,7 @@ const Products = [
     quantity: 4.0,
   },
   {
+    id: 6,
     product: "Book Shelf",
     code: "INV006",
     price: 200.0,
@@ -62,6 +68,7 @@ const Products = [
     quantity: 1.0,
   },
   {
+    id: 7,
     product: "Computer Glasses",
     code: "INV007",
     price: 300.0,
@@ -78,6 +85,7 @@ export function TableDemo() {
   const [selectAll, setSelectAll] = useState(false);
   const [sortedProducts, setSortedProducts] = useState(Products);
   const [sortConfig, setSortConfig] = useState({ key: "", direction: "" });
+  const [searchQuery, setSearchQuery] = useState("");
 
   const handleSelectAll = () => {
     const newSelectAll = !selectAll;
@@ -110,57 +118,71 @@ export function TableDemo() {
     setSortedProducts(sortedArray);
   };
 
+  const filteredProducts = sortedProducts.filter((product) =>
+    product.product.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   return (
-    <Table>
-      <TableCaption>Product List</TableCaption>
-      <TableHeader>
-        <TableRow>
-          <TableHead className="text-left">
-            <input
-              type="checkbox"
-              checked={selectAll}
-              onChange={handleSelectAll}
-            />
-          </TableHead>
-          <TableHead
-            className="text-left flex items-center "
-            onClick={() => handleSort("product")}
-          >
-            Product <RiArrowUpDownFill className="ml-1" />
-          </TableHead>
-          <TableHead>Code</TableHead>
-          <TableHead>Category</TableHead>
-          <TableHead>Brand Name</TableHead>
-          <TableHead>Quantity</TableHead>
-          <TableHead className="text-right">Amount</TableHead>
-        </TableRow>
-      </TableHeader>
-      <TableBody>
-        {sortedProducts.map((product, index) => (
-          <TableRow key={product.code}>
-            <TableCell>
+    <div>
+      <input
+        type="text"
+        placeholder="Search products..."
+        value={searchQuery}
+        onChange={(e) => setSearchQuery(e.target.value)}
+        className="mb-4 p-2 border border-gray-300 rounded"
+      />
+      <Table>
+        <TableCaption>Product List</TableCaption>
+        <TableHeader>
+          <TableRow>
+            <TableHead className="text-left">
               <input
                 type="checkbox"
-                checked={selectedProducts[index]}
-                onChange={() => handleSelectProduct(index)}
+                checked={selectAll}
+                onChange={handleSelectAll}
               />
-            </TableCell>
-            <TableCell className="font-medium">{product.product}</TableCell>
-            <TableCell>{product.code}</TableCell>
-            <TableCell>{product.category}</TableCell>
-            <TableCell>{product.brand}</TableCell>
-            <TableCell className="ml-8">{product.quantity}</TableCell>
-            <TableCell className="text-right">
-              ${product.price.toFixed(2)}
-            </TableCell>
+            </TableHead>
+            <TableHead
+              className="text-left flex items-center"
+              onClick={() => handleSort("product")}
+            >
+              Product
+              <RiArrowUpDownFill className="ml-1" />
+            </TableHead>
+            <TableHead>Code</TableHead>
+            <TableHead>Category</TableHead>
+            <TableHead>Brand Name</TableHead>
+            <TableHead>Quantity</TableHead>
+            <TableHead className="text-right">Amount</TableHead>
           </TableRow>
-        ))}
-      </TableBody>
-      <TableFooter>
-        <TableRow>
-          <TableCell colSpan={7}></TableCell>
-        </TableRow>
-      </TableFooter>
-    </Table>
+        </TableHeader>
+        <TableBody>
+          {filteredProducts.map((product, index) => (
+            <TableRow key={product.code}>
+              <TableCell>
+                <input
+                  type="checkbox"
+                  checked={selectedProducts[index]}
+                  onChange={() => handleSelectProduct(index)}
+                />
+              </TableCell>
+              <TableCell className="font-medium">{product.product}</TableCell>
+              <TableCell>{product.code}</TableCell>
+              <TableCell>{product.category}</TableCell>
+              <TableCell>{product.brand}</TableCell>
+              <TableCell className="ml-8">{product.quantity}</TableCell>
+              <TableCell className="text-right">
+                ${product.price.toFixed(2)}
+              </TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+        <TableFooter>
+          <TableRow>
+            <TableCell colSpan={7}></TableCell>
+          </TableRow>
+        </TableFooter>
+      </Table>
+    </div>
   );
 }
