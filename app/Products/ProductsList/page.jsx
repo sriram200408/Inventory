@@ -1,6 +1,7 @@
+"use client";
 import React from "react";
 
-import { TableDemo } from "./Components/ProductsList";
+import { TableDemo } from "../../../components/products/ProductsList";
 
 const ProductsListPage = () => {
   return (
