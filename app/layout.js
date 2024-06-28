@@ -1,5 +1,5 @@
-import MainLayout from "./components/Layout/MainLayout";
-import MenuContextProvider from "./context/MenuContext";
+import Sidebar from "../components/common/Sidebar";
+import MenuContextProvider from "../components/common/MenuContext";
 import "./globals.css";
 
 export const metadata = {
@@ -12,7 +12,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body >
         <MenuContextProvider>
-        <MainLayout>{children}</MainLayout>
+        <Sidebar>{children}</Sidebar>
         </MenuContextProvider>
         
       </body>

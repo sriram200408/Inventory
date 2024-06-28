@@ -1,10 +1,10 @@
 import React from 'react'
-import Page from "./dashboard/page"
+import  { AddProducts } from '../../../components/products/AddProducts'
 
 const page = () => {
   return (
     <div>
-      <Page/>
+      <AddProducts/>
     </div>
   )
 }
