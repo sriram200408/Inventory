@@ -166,7 +166,7 @@ export function AddProducts() {
           <Textarea className="mt-1" value={description} onChange={(e) => setDescription(e.target.value)} required />
         </div>
         <div className="flex">
-          <Button type="submit" variant="outline" className="mt-5 hover:bg-green-500 hover:text-white">Add Product</Button>
+          <Button type="submit" variant="outline" className="mt-5 hover:bg-green-500 hover:text-white" >Add Product</Button>
           <Button type="button" variant="outline" className="mt-5 ml-5 hover:bg-blue-500 hover:text-white" onClick={() => {
             setProductType('');
             setName('');

@@ -10,7 +10,6 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { RiArrowUpDownFill } from "react-icons/ri";
 
 export const Products = [
   {
@@ -122,7 +121,9 @@ export function TableDemo() {
   };
 
   const filteredProducts = sortedProducts.filter((product) =>
-    product.product.toLowerCase().includes(searchQuery.toLowerCase())
+    Object.values(product).some((value) =>
+      value.toString().toLowerCase().includes(searchQuery.toLowerCase())
+    )
   );
 
   const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
@@ -181,18 +182,43 @@ export function TableDemo() {
                 onChange={handleSelectAll}
               />
             </TableHead>
+
             <TableHead
-              className="text-left flex items-center"
+              className="text-left flex items-center hover:cursor-pointer"
               onClick={() => handleSort("product")}
             >
               Product
-              <RiArrowUpDownFill className="ml-1 hover:cursor-pointer" />
             </TableHead>
-            <TableHead>Code</TableHead>
-            <TableHead>Category</TableHead>
-            <TableHead>Brand Name</TableHead>
-            <TableHead>Quantity</TableHead>
-            <TableHead className="text-right">Amount</TableHead>
+            <TableHead
+              className=" hover:cursor-pointer"
+              onClick={() => handleSort("code")}
+            >
+              Code
+            </TableHead>
+            <TableHead
+              className="hover:cursor-pointer"
+              onClick={() => handleSort("category")}
+            >
+              Category
+            </TableHead>
+            <TableHead
+              className="hover:cursor-pointer"
+              onClick={() => handleSort("brand")}
+            >
+              Brand Name
+            </TableHead>
+            <TableHead
+              className="hover:cursor-pointer"
+              onClick={() => handleSort("quantity")}
+            >
+              Quantity
+            </TableHead>
+            <TableHead
+              className="text-right hover:cursor-pointer"
+              onClick={() => handleSort("price")}
+            >
+              Amount
+            </TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
