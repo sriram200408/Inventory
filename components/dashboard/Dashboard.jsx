@@ -1,4 +1,8 @@
 import React from 'react'
+import { FaShoppingBag } from "react-icons/fa";
+import { FaBox } from "react-icons/fa";
+import { AiFillDollarCircle } from 'react-icons/ai';
+
 
 const Dashboard = () => {
   return (
@@ -46,3 +50,7 @@ const Dashboard = () => {
 }
 
 export default Dashboard
+
+function BoxWrapper ({children}) {
+  return ( <div className='bg-white rounded-sm p-4 flex-1 border border-gray-200 flex items-center'>{children}</div>)
+}
