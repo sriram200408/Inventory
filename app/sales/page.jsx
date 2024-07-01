@@ -1,4 +1,4 @@
-"use client"
+
 import Sales from '../../components/dashboard/Sales'
 import React from 'react'
 
