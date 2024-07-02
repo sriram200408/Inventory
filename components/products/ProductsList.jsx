@@ -10,73 +10,8 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import  Products  from "../../db.json"
 
-export const Products = [
-  {
-    id: 1,
-    product: "Organic cream",
-    code: "INV001",
-    price: 250.0,
-    category: "Beauty",
-    brand: "Lakme",
-    quantity: 2.0,
-  },
-  {
-    id: 2,
-    product: "Umbrella",
-    code: "INV002",
-    price: 150.0,
-    category: "Grocery",
-    brand: "Sun",
-    quantity: 1.0,
-  },
-  {
-    id: 3,
-    product: "Coffe beans",
-    code: "INV003",
-    price: 350.0,
-    category: "Food",
-    brand: "Nescafe",
-    quantity: 3.0,
-  },
-  {
-    id: 4,
-    product: "Nike Shoes",
-    code: "INV004",
-    price: 450.0,
-    category: "Shoes",
-    brand: "Nike",
-    quantity: 1.0,
-  },
-  {
-    id: 5,
-    product: "Levis jeans",
-    code: "INV005",
-    price: 550.0,
-    category: "Clothing",
-    brand: "Levis",
-    quantity: 4.0,
-  },
-  {
-    id: 6,
-    product: "Book Shelf",
-    code: "INV006",
-    price: 200.0,
-    category: "Furniture",
-    brand: "Vintage",
-    quantity: 1.0,
-  },
-  {
-    id: 7,
-    product: "Computer Glasses",
-    code: "INV007",
-    price: 300.0,
-    category: "Frames",
-    brand: "Ray-Ban",
-    quantity: 1.0,
-  },
-  // Add more products if needed to test pagination
-];
 
 export function TableDemo() {
   const [selectedProducts, setSelectedProducts] = useState(
@@ -120,7 +55,7 @@ export function TableDemo() {
     setSortedProducts(sortedArray);
   };
 
-  const filteredProducts = sortedProducts.filter((product) =>
+  const filteredProducts = sortedProducts.Products.filter((product) =>
     Object.values(product).some((value) =>
       value.toString().toLowerCase().includes(searchQuery.toLowerCase())
     )
@@ -231,10 +166,10 @@ export function TableDemo() {
                   onChange={() => handleSelectProduct(index)}
                 />
               </TableCell>
-              <TableCell className="font-medium">{product.product}</TableCell>
+              <TableCell className="font-medium">{product.name}</TableCell>
               <TableCell>{product.code}</TableCell>
               <TableCell>{product.category}</TableCell>
-              <TableCell>{product.brand}</TableCell>
+              <TableCell>{product.barcodeSymbology}</TableCell>
               <TableCell className="ml-8">{product.quantity}</TableCell>
               <TableCell className="text-right">
                 ${product.price.toFixed(2)}
