@@ -1,4 +1,3 @@
-
 import React from "react";
 
 import { TableDemo } from "../../../components/products/ProductsList";

@@ -11,7 +11,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 
-export const Products = [
+const initialProducts = [
   {
     id: 1,
     product: "Organic cream",
@@ -75,24 +75,25 @@ export const Products = [
     brand: "Ray-Ban",
     quantity: 1.0,
   },
-  // Add more products if needed to test pagination
 ];
 
 export function TableDemo() {
+  const [products, setProducts] = useState(initialProducts);
   const [selectedProducts, setSelectedProducts] = useState(
-    new Array(Products.length).fill(false)
+    new Array(initialProducts.length).fill(false)
   );
   const [selectAll, setSelectAll] = useState(false);
-  const [sortedProducts, setSortedProducts] = useState(Products);
+  const [sortedProducts, setSortedProducts] = useState(products);
   const [sortConfig, setSortConfig] = useState({ key: "", direction: "" });
   const [searchQuery, setSearchQuery] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState(5);
+  const [editProduct, setEditProduct] = useState(null);
 
   const handleSelectAll = () => {
     const newSelectAll = !selectAll;
     setSelectAll(newSelectAll);
-    setSelectedProducts(new Array(Products.length).fill(newSelectAll));
+    setSelectedProducts(new Array(products.length).fill(newSelectAll));
   };
 
   const handleSelectProduct = (index) => {
@@ -120,6 +121,25 @@ export function TableDemo() {
     setSortedProducts(sortedArray);
   };
 
+  const handleDeleteProduct = (code) => {
+    const updatedProducts = products.filter((product) => product.code !== code);
+    setProducts(updatedProducts);
+    setSortedProducts(updatedProducts);
+  };
+
+  const handleEditProduct = (product) => {
+    setEditProduct(product);
+  };
+
+  const handleUpdateProduct = (updatedProduct) => {
+    const updatedProducts = products.map((product) =>
+      product.code === updatedProduct.code ? updatedProduct : product
+    );
+    setProducts(updatedProducts);
+    setSortedProducts(updatedProducts);
+    setEditProduct(null);
+  };
+
   const filteredProducts = sortedProducts.filter((product) =>
     Object.values(product).some((value) =>
       value.toString().toLowerCase().includes(searchQuery.toLowerCase())
@@ -143,7 +163,7 @@ export function TableDemo() {
     <div>
       <input
         type="text"
-        placeholder="Search products..."
+        placeholder="Search..."
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
         className="mb-4 p-2 border border-gray-300 rounded"
@@ -153,7 +173,7 @@ export function TableDemo() {
           value={itemsPerPage}
           onChange={(e) => {
             setItemsPerPage(parseInt(e.target.value, 10));
-            setCurrentPage(1); // Reset to the first page when items per page changes
+            setCurrentPage(1);
           }}
           className="p-2 border border-gray-300 rounded"
         >
@@ -182,7 +202,6 @@ export function TableDemo() {
                 onChange={handleSelectAll}
               />
             </TableHead>
-
             <TableHead
               className="text-left flex items-center hover:cursor-pointer"
               onClick={() => handleSort("product")}
@@ -214,11 +233,12 @@ export function TableDemo() {
               Quantity
             </TableHead>
             <TableHead
-              className="text-right hover:cursor-pointer"
+              className=" hover:cursor-pointer"
               onClick={() => handleSort("price")}
             >
               Amount
             </TableHead>
+            <TableHead className="text-right">Actions</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
@@ -236,15 +256,27 @@ export function TableDemo() {
               <TableCell>{product.category}</TableCell>
               <TableCell>{product.brand}</TableCell>
               <TableCell className="ml-8">{product.quantity}</TableCell>
+              <TableCell>${product.price.toFixed(2)}</TableCell>
               <TableCell className="text-right">
-                ${product.price.toFixed(2)}
+                <button
+                  onClick={() => handleEditProduct(product)}
+                  className="mr-2 px-2 py-1 bg-blue-500 text-white rounded"
+                >
+                  Edit
+                </button>
+                <button
+                  onClick={() => handleDeleteProduct(product.code)}
+                  className="px-2 py-1 bg-red-500 text-white rounded "
+                >
+                  Delete
+                </button>
               </TableCell>
             </TableRow>
           ))}
         </TableBody>
         <TableFooter>
           <TableRow>
-            <TableCell colSpan={7} className="text-right">
+            <TableCell colSpan={8} className="text-right">
               <button
                 onClick={() => handleChangePage(currentPage - 1)}
                 disabled={currentPage === 1}
@@ -266,6 +298,97 @@ export function TableDemo() {
           </TableRow>
         </TableFooter>
       </Table>
+
+      {editProduct && (
+        <div className="fixed inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center">
+          <div className="bg-white p-4 rounded">
+            <h2 className="mb-4">Edit Product</h2>
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                handleUpdateProduct(editProduct);
+              }}
+            >
+              <input
+                type="text"
+                placeholder="Product Name"
+                value={editProduct.product}
+                onChange={(e) =>
+                  setEditProduct({ ...editProduct, product: e.target.value })
+                }
+                className="mb-2 p-2 border border-gray-300 rounded"
+              />
+              <input
+                type="text"
+                placeholder="Code"
+                value={editProduct.code}
+                onChange={(e) =>
+                  setEditProduct({ ...editProduct, code: e.target.value })
+                }
+                className="mb-2 p-2 border border-gray-300 rounded"
+              />
+
+              <input
+                type="text"
+                placeholder="Category"
+                value={editProduct.category}
+                onChange={(e) =>
+                  setEditProduct({ ...editProduct, category: e.target.value })
+                }
+                className="mb-2 p-2 border border-gray-300 rounded"
+              />
+              <input
+                type="text"
+                placeholder="Brand"
+                value={editProduct.brand}
+                onChange={(e) =>
+                  setEditProduct({ ...editProduct, brand: e.target.value })
+                }
+                className="mb-2 p-2 border border-gray-300 rounded"
+              />
+              <input
+                type="number"
+                placeholder="Quantity"
+                value={editProduct.quantity}
+                onChange={(e) =>
+                  setEditProduct({
+                    ...editProduct,
+                    quantity: parseFloat(e.target.value),
+                  })
+                }
+                className="mb-2 p-2 border border-gray-300 rounded"
+              />
+              <input
+                type="number"
+                placeholder="Price"
+                value={editProduct.price}
+                onChange={(e) =>
+                  setEditProduct({
+                    ...editProduct,
+                    price: parseFloat(e.target.value),
+                  })
+                }
+                className="mb-2 p-2 border border-gray-300 rounded"
+              />
+              <div className="flex justify-end">
+                <button
+                  type="button"
+                  onClick={() => setEditProduct(null)}
+                  className="mr-2 px-4 py-2 bg-gray-500 text-white rounded"
+                >
+                  Cancel
+                </button>
+                <button
+                  type="submit"
+                  className="px-4 py-2 bg-blue-500 text-white rounded"
+                >
+                  Save
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
