@@ -10,6 +10,8 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import  Products  from "../../db.json"
+
 
 const initialProducts = [
   {
@@ -76,6 +78,8 @@ const initialProducts = [
     quantity: 1.0,
   },
 ];
+=======
+
 
 export function TableDemo() {
   const [products, setProducts] = useState(initialProducts);
@@ -121,8 +125,9 @@ export function TableDemo() {
     setSortedProducts(sortedArray);
   };
 
+
   const handleDeleteProduct = (code) => {
-    const updatedProducts = products.filter((product) => product.code !== code);
+    const updatedProducts Products.filter((product) => product.code !== code);
     setProducts(updatedProducts);
     setSortedProducts(updatedProducts);
   };
@@ -140,7 +145,10 @@ export function TableDemo() {
     setEditProduct(null);
   };
 
-  const filteredProducts = sortedProducts.filter((product) =>
+  const filteredProducts = sortedProducts.Products.filter((product) =>
+                                                          
+  const filteredProducts = sortedProducts.Products.filter((product) =>
+
     Object.values(product).some((value) =>
       value.toString().toLowerCase().includes(searchQuery.toLowerCase())
     )
@@ -251,10 +259,10 @@ export function TableDemo() {
                   onChange={() => handleSelectProduct(index)}
                 />
               </TableCell>
-              <TableCell className="font-medium">{product.product}</TableCell>
+              <TableCell className="font-medium">{product.name}</TableCell>
               <TableCell>{product.code}</TableCell>
               <TableCell>{product.category}</TableCell>
-              <TableCell>{product.brand}</TableCell>
+              <TableCell>{product.barcodeSymbology}</TableCell>
               <TableCell className="ml-8">{product.quantity}</TableCell>
               <TableCell>${product.price.toFixed(2)}</TableCell>
               <TableCell className="text-right">

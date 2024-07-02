@@ -1,5 +1,5 @@
 {
-  "users": [
+  "Products": [
     {
       "id": "ca4f",
       "productType": "digital",
@@ -40,6 +40,7 @@
       "description": "applpapsda"
     },
     {
+
       "id": "c83a",
       "productType": "Inclusive",
       "name": "xdcs",
@@ -51,6 +52,45 @@
       "taxMethod": "inclusive",
       "quantity": 21,
       "description": "afaf"
+    },
+      "id": "9188",
+      "productType": "Inclusive",
+      "name": "mamamammaa",
+      "code": "23123212",
+      "barcodeSymbology": "MOM-S02",
+      "category": "beauty",
+      "cost": 12312312,
+      "price": 432435323,
+      "taxMethod": "inclusive",
+      "quantity": 2453,
+      "description": "papappaaap"
+    },
+    {
+      "id": "1216",
+      "productType": "digital",
+      "name": "EADCVSF",
+      "code": "214EDE",
+      "barcodeSymbology": "MOM-S02",
+      "category": "furniture",
+      "cost": 21,
+      "price": 12,
+      "taxMethod": "inclusive",
+      "quantity": 214,
+      "description": "ASFDAW"
+    },
+    {
+      "id": "d069",
+      "productType": "service",
+      "name": "asfd",
+      "code": "324dsa",
+      "barcodeSymbology": "QOS-I03",
+      "category": "cosmetics",
+      "cost": 243,
+      "price": 32412,
+      "taxMethod": "inclusive",
+      "quantity": 2131,
+      "description": "asijdl"
+
     }
   ]
 }
