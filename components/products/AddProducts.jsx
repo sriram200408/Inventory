@@ -11,6 +11,7 @@ import {
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
+import axios from 'axios';
 
 export function AddProducts() {
   const [productType, setProductType] = useState('');
