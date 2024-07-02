@@ -40,6 +40,19 @@
       "description": "applpapsda"
     },
     {
+
+      "id": "c83a",
+      "productType": "Inclusive",
+      "name": "xdcs",
+      "code": "232e",
+      "barcodeSymbology": "TIS-M01",
+      "category": "furniture",
+      "cost": 231,
+      "price": 321,
+      "taxMethod": "inclusive",
+      "quantity": 21,
+      "description": "afaf"
+    },
       "id": "9188",
       "productType": "Inclusive",
       "name": "mamamammaa",
@@ -77,6 +90,7 @@
       "taxMethod": "inclusive",
       "quantity": 2131,
       "description": "asijdl"
+
     }
   ]
 }
