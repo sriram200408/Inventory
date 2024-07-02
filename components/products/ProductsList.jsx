@@ -78,7 +78,6 @@ const initialProducts = [
     quantity: 1.0,
   },
 ];
-=======
 
 
 export function TableDemo() {
@@ -97,7 +96,7 @@ export function TableDemo() {
   const handleSelectAll = () => {
     const newSelectAll = !selectAll;
     setSelectAll(newSelectAll);
-    setSelectedProducts(new Array(products.length).fill(newSelectAll));
+    setSelectedProducts(new Array(Products.length).fill(newSelectAll));
   };
 
   const handleSelectProduct = (index) => {
@@ -127,7 +126,7 @@ export function TableDemo() {
 
 
   const handleDeleteProduct = (code) => {
-    const updatedProducts Products.filter((product) => product.code !== code);
+    const updatedProducts = Products.filter((product) => product.code !== code);
     setProducts(updatedProducts);
     setSortedProducts(updatedProducts);
   };
@@ -145,7 +144,6 @@ export function TableDemo() {
     setEditProduct(null);
   };
 
-  const filteredProducts = sortedProducts.Products.filter((product) =>
                                                           
   const filteredProducts = sortedProducts.Products.filter((product) =>
 
