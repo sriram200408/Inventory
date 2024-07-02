@@ -81,12 +81,12 @@ const initialProducts = [
 
 
 export function TableDemo() {
-  const [products, setProducts] = useState(initialProducts);
+  const [products, setProducts] = useState(Products);
   const [selectedProducts, setSelectedProducts] = useState(
-    new Array(initialProducts.length).fill(false)
+    new Array(Products.length).fill(false)
   );
   const [selectAll, setSelectAll] = useState(false);
-  const [sortedProducts, setSortedProducts] = useState(products);
+  const [sortedProducts, setSortedProducts] = useState(Products);
   const [sortConfig, setSortConfig] = useState({ key: "", direction: "" });
   const [searchQuery, setSearchQuery] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
@@ -194,7 +194,7 @@ export function TableDemo() {
             filteredProducts.length
           )}{" "}
           to {Math.min(currentPage * itemsPerPage, filteredProducts.length)} of{" "}
-          {filteredProducts.length} products
+          {filteredProducts.length} Products
         </span>
       </div>
       <Table>
