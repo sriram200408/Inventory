@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useState } from 'react';
 import { Input } from "@/components/ui/input";
 import {
@@ -12,8 +12,14 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Link from 'next/link';
+import { TableDemo } from './ProductsList';
+import { redirect } from 'next/navigation'
+import { revalidatePath } from 'next/cache'
 
-export function AddProducts() {
+export default function AddProducts() {
   const [productType, setProductType] = useState('');
   const [name, setName] = useState('');
   const [code, setCode] = useState('');
@@ -24,52 +30,45 @@ export function AddProducts() {
   const [taxMethod, setTaxMethod] = useState('');
   const [quantity, setQuantity] = useState('');
   const [description, setDescription] = useState('');
+  const [submitted, setSubmitted] = useState(false);
 
-
+  const notify = () => toast("Success");
+  const errorify = () => toast("Error submitting data");
 
   async function handleSubmit(event) {
     event.preventDefault();
     const productData = {
-      productType: productType,
-      name : name,
-      code: code,
-      barcodeSymbology: barcodeSymbology,
-      category: category,
+      productType :productType,
+      name:name,
+      code:code,
+      barcodeSymbology:barcodeSymbology,
+      category:category,
       cost: parseFloat(cost),
       price: parseFloat(price),
-      taxMethod: taxMethod,
+      taxMethod:taxMethod,
       quantity: parseInt(quantity),
-      description: description,
-      
+      description:description,
     };
 
-    console.log('Product Data:', productData);  
-
     try {
-      const response = await fetch('http://localhost:3031/Products', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(productData),
-      });
-
-
-      console.log('Raw response:', response);
-
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-
-      const data = await response.json();
-
-      console.log('Parsed response:', data);
-
+      await axios.post('http://localhost:3031/Products', productData);
+      notify();
+      setTimeout(() => {
+        setSubmitted(true);
+      }, 1000); 
     } catch (error) {
-      console.error('Error adding product:', error);
+      errorify();
     }
   }
+  if(submitted){
+  redirect(`/Products/productslist`) 
+  }
+
+  
 
   return (
-    <div id="areawrap" className="rounded-xld border-black m-4">
+    <div id="areawrap" className="rounded-xld border-black m-4 z-0">
+      <ToastContainer />
       <div>
         <h2 className="font-bold">Add Product</h2>
       </div>
@@ -167,7 +166,7 @@ export function AddProducts() {
           <Textarea className="mt-1" value={description} onChange={(e) => setDescription(e.target.value)} required />
         </div>
         <div className="flex">
-          <Button type="submit" variant="outline" className="mt-5 hover:bg-green-500 hover:text-white" >Add Product</Button>
+          <Button type="submit" variant="outline" className="mt-5 hover:bg-green-500 hover:text-white">Add Product</Button>
           <Button type="button" variant="outline" className="mt-5 ml-5 hover:bg-blue-500 hover:text-white" onClick={() => {
             setProductType('');
             setName('');

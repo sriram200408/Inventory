@@ -7,7 +7,7 @@ import { AiFillDollarCircle } from 'react-icons/ai';
 const Dashboard = () => {
   return (
     <>
-    <div className="bg-gray-100 rounded-lg mx-4 p-4 flex gap-4">
+    <div className="bg-gray-100 rounded-lg mx-4 p-4 flex gap-4 z-10">
       <BoxWrapper>
         <div className="rounded-full h-12 w-12 flex items-center justify-center bg-sky-500">
           <FaShoppingBag className="text-2xl text-white" />
