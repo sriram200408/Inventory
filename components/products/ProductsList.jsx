@@ -112,7 +112,7 @@ export function TableDemo() {
 
   function updateData(updatedProduct) {
     axios
-      .put(
+      .patch(
         `http://localhost:3031/Products/${updatedProduct.id}`,
         updatedProduct
       )
@@ -146,7 +146,7 @@ export function TableDemo() {
   }
 
   const redirectPage = () => {
-    router.push("/Products/addproducts");
+    router.push("/addproducts");
   };
 
   return (
@@ -210,7 +210,7 @@ export function TableDemo() {
                 className="hover:cursor-pointer"
                 onClick={() => handleSort("code")}
               >
-                Code
+                Serial No
               </TableHead>
               <TableHead
                 className="hover:cursor-pointer"
@@ -218,12 +218,7 @@ export function TableDemo() {
               >
                 Category
               </TableHead>
-              <TableHead
-                className="hover:cursor-pointer"
-                onClick={() => handleSort("brand")}
-              >
-                Barcode
-              </TableHead>
+             
               <TableHead
                 className="hover:cursor-pointer"
                 onClick={() => handleSort("quantity")}
@@ -252,9 +247,9 @@ export function TableDemo() {
                 <TableCell className="font-medium">{product.name}</TableCell>
                 <TableCell>{product.code}</TableCell>
                 <TableCell>{product.category}</TableCell>
-                <TableCell>{product.barcodeSymbology}</TableCell>
-                <TableCell className="ml-8">{product.quantity}</TableCell>
-                <TableCell>${product.price}</TableCell>
+                
+                <TableCell className="">{product.quantity}</TableCell>
+                <TableCell>INR {product.price}</TableCell>
 
                 <TableCell className="text-right">
                   <button
@@ -344,18 +339,7 @@ export function TableDemo() {
                   }
                   className="mb-2 p-2 border border-gray-300 rounded"
                 />
-                <input
-                  type="text"
-                  placeholder="Brand"
-                  value={editProduct.barcodeSymbology}
-                  onChange={(e) =>
-                    setEditProduct({
-                      ...editProduct,
-                      barcodeSymbology: e.target.value,
-                    })
-                  }
-                  className="mb-2 p-2 border border-gray-300 rounded"
-                />
+                
                 <input
                   type="number"
                   placeholder="Quantity"

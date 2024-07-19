@@ -1,0 +1,14 @@
+{
+  "Products": [
+    {
+      "id": "c789",
+      "name": "Sunglasses",
+      "code": "sun123",
+      "category": "Fashion",
+      "cost": 800,
+      "price": 1500,
+      "quantity": 1,
+      "description": "Stylish sunglasses with UV protection"
+    }
+  ]
+}

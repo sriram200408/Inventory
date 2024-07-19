@@ -1,0 +1,81 @@
+{
+
+ "productTypes" :[
+    {
+      "id": 1,
+      "name": "Inclusive",
+      "description": "Products that are inclusive of all additional features and services."
+    },
+    {
+      "id": 2,
+      "name": "Exclusive",
+      "description": "Products that are exclusive and typically offer premium features or services."
+    },
+    {
+      "id": 3,
+      "name": "Digital",
+      "description": "Products that are digital in nature, such as software, e-books, and online services."
+    },
+    {
+      "id": 4,
+      "name": "Service",
+      "description": "Products that are offered as a service, including consultancy, maintenance, and support."
+    },
+    {
+      "id": 5,
+      "name": "Physical",
+      "description": "Tangible products that can be physically handled and used."
+    },
+    {
+      "id": 6,
+      "name": "Subscription",
+      "description": "Products that are provided on a subscription basis, offering recurring access or delivery."
+    },
+    {
+      "id": 7,
+      "name": "One-time Purchase",
+      "description": "Products that are purchased once and do not have recurring payments."
+    },
+    {
+      "id": 8,
+      "name": "Freemium",
+      "description": "Products that offer basic features for free with the option to pay for advanced features."
+    },
+    {
+      "id": 9,
+      "name": "Trial",
+      "description": "Products that are offered for a limited time for evaluation purposes."
+    },
+    {
+      "id": 10,
+      "name": "Open Source",
+      "description": "Products that are released with a license allowing anyone to view, modify, and distribute the source code."
+    },
+    {
+      "id": 11,
+      "name": "Enterprise",
+      "description": "Products designed for business use, often including additional features and support."
+    },
+    {
+      "id": 12,
+      "name": "Personal",
+      "description": "Products intended for individual use."
+    },
+    {
+      "id": 13,
+      "name": "Educational",
+      "description": "Products designed for educational purposes, often including special pricing for students and teachers."
+    },
+    {
+      "id": 14,
+      "name": "Customizable",
+      "description": "Products that can be tailored to the specific needs of the user."
+    },
+    {
+      "id": 15,
+      "name": "Licensing",
+      "description": "Products sold under a licensing agreement, often involving periodic payments."
+    }
+  ]
+}
+  

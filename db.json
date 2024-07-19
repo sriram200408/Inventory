@@ -1,30 +1,94 @@
 {
   "Products": [
     {
-      "id": "53ac",
-      "productType": "digital",
-      "name": "television",
-      "code": "tv123",
-      "barcodeSymbology": "DIS-T01",
-      "category": "entertainment",
-      "cost": 25000,
-      "price": 100000,
-      "taxMethod": "inclusive",
-      "quantity": 4,
-      "description": "this is a good quality tv"
+      "id": "e093",
+      "name": "colgate maxfresh",
+      "code": "12344321",
+      "category": "colgate232323-maxfresh12",
+      "cost": 200,
+      "price": 1000,
+      "quantity": 1,
+      "description": "red colour toothpaste"
     },
     {
-      "id": "09eb",
-      "productType": "Inclusive",
-      "name": "askakm",
-      "code": "23ewr",
-      "barcodeSymbology": "SDE-W02",
-      "category": "shoes",
-      "cost": 213,
-      "price": 321,
-      "taxMethod": "Exclusive",
-      "quantity": 213,
-      "description": "havsdjkls"
+      "id": "a123",
+      "name": "Bluetooth Speaker",
+      "code": "bt123",
+      "category": "Audio",
+      "cost": 1500,
+      "price": 3000,
+      "quantity": 4,
+      "description": "Portable Bluetooth speaker with high-quality sound"
+    },
+    {
+      "id": "b456",
+      "name": "Running Shoes",
+      "code": "shoe123",
+      "category": "Sportswear",
+      "cost": 5000,
+      "price": 7000,
+      "quantity": 5,
+      "description": "Comfortable running shoes for daily use"
+    },
+    {
+      "id": "c789",
+      "name": "Sunglasses",
+      "code": "sun123",
+      "category": "Fashion",
+      "cost": 800,
+      "price": 1500,
+      "quantity": 17,
+      "description": "Stylish sunglasses with UV protection"
+    },
+    {
+      "id": "d012",
+      "name": "Organic Almonds",
+      "code": "almond123",
+      "category": "Food",
+      "cost": 1200,
+      "price": 2000,
+      "quantity": 50,
+      "description": "Healthy and nutritious organic almonds"
+    },
+    {
+      "id": "e345",
+      "name": "Vacuum Cleaner",
+      "code": "vac123",
+      "category": "Home Cleaning",
+      "cost": 4500,
+      "price": 7000,
+      "quantity": 8,
+      "description": "High suction power vacuum cleaner"
+    },
+    {
+      "id": "f678",
+      "name": "Office Chair",
+      "code": "chair123",
+      "category": "Office Supplies",
+      "cost": 3500,
+      "price": 6000,
+      "quantity": 15,
+      "description": "Ergonomic office chair with lumbar support"
+    },
+    {
+      "id": "g901",
+      "name": "Lipstick",
+      "code": "lip123",
+      "category": "Cosmetics",
+      "cost": 300,
+      "price": 900,
+      "quantity": 100,
+      "description": "Matte finish long-lasting lipstick"
+    },
+    {
+      "id": "h234",
+      "name": "Vitamin C Tablets",
+      "code": "vitc123",
+      "category": "Supplements",
+      "cost": 600,
+      "price": 1200,
+      "quantity": 199,
+      "description": "Boosts immunity and improves skin health"
     }
   ]
 }

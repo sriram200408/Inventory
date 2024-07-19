@@ -1,0 +1,79 @@
+{
+"barcodes" : [
+    {
+      "id": 1,
+      "name": "Code 128",
+      "description": "High-density linear barcode symbology."
+    },
+    {
+      "id": 2,
+      "name": "UPC-A",
+      "description": "Universal Product Code (UPC) standard used in retail."
+    },
+    {
+      "id": 3,
+      "name": "EAN-13",
+      "description": "European Article Number, a superset of the original 12-digit UPC system."
+    },
+    {
+      "id": 4,
+      "name": "QR Code",
+      "description": "Two-dimensional barcode used for encoding larger amounts of data."
+    },
+    {
+      "id": 5,
+      "name": "Data Matrix",
+      "description": "Two-dimensional barcode symbology capable of encoding large amounts of data in a small area."
+    },
+    {
+      "id": 6,
+      "name": "Code 39",
+      "description": "Variable length, alphanumeric barcode symbology."
+    },
+    {
+      "id": 7,
+      "name": "PDF417",
+      "description": "Stacked linear barcode format used in a variety of applications."
+    },
+    {
+      "id": 8,
+      "name": "Aztec Code",
+      "description": "Two-dimensional barcode symbology designed to be read even when damaged."
+    },
+    {
+      "id": 9,
+      "name": "Codabar",
+      "description": "Discrete, self-checking symbology used in libraries and blood banks."
+    },
+    {
+      "id": 10,
+      "name": "EAN-8",
+      "description": "Short version of the EAN-13 code, suitable for small packages."
+    },
+    {
+      "id": 11,
+      "name": "ITF-14",
+      "description": "Interleaved 2 of 5 symbology used for packaging levels of products."
+    },
+    {
+      "id": 12,
+      "name": "GS1 DataBar",
+      "description": "Reduced space symbology capable of encoding additional information such as expiration dates and batch numbers."
+    },
+    {
+      "id": 13,
+      "name": "MaxiCode",
+      "description": "Two-dimensional barcode developed by UPS for high-speed scanning and tracking of packages."
+    },
+    {
+      "id": 14,
+      "name": "MSI Plessey",
+      "description": "Continuous, self-checking symbology used primarily for marking retail shelves."
+    },
+    {
+      "id": 15,
+      "name": "PostNet",
+      "description": "Barcode symbology used by the United States Postal Service to assist in directing mail."
+    }
+  ]
+}

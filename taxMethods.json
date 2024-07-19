@@ -1,0 +1,64 @@
+{
+"taxMethods" :[
+    {
+      "id": 1,
+      "name": "VAT",
+      "description": "Value Added Tax, a consumption tax placed on a product whenever value is added at each stage of the supply chain."
+    },
+    {
+      "id": 2,
+      "name": "GST",
+      "description": "Goods and Services Tax, a value-added tax levied on most goods and services sold for domestic consumption."
+    },
+    {
+      "id": 3,
+      "name": "Sales Tax",
+      "description": "A tax on sales or on the receipts from sales."
+    },
+    {
+      "id": 4,
+      "name": "Service Tax",
+      "description": "A tax levied on services provided."
+    },
+    {
+      "id": 5,
+      "name": "Excise Duty",
+      "description": "A tax levied on certain goods and commodities produced or sold within a country."
+    },
+    {
+      "id": 6,
+      "name": "Custom Duty",
+      "description": "A tax levied on imports and exports of goods."
+    },
+    {
+      "id": 7,
+      "name": "Inclusive",
+      "description": "The tax is included in the price of the product or service."
+    },
+    {
+      "id": 8,
+      "name": "Exclusive",
+      "description": "The tax is added on top of the price of the product or service."
+    },
+    {
+      "id": 9,
+      "name": "Withholding Tax",
+      "description": "A tax withheld from employees' wages and paid directly to the government by the employer."
+    },
+    {
+      "id": 10,
+      "name": "Carbon Tax",
+      "description": "A tax on the carbon content of fuels."
+    },
+    {
+      "id": 11,
+      "name": "Property Tax",
+      "description": "A tax assessed on real estate by the local government."
+    },
+    {
+      "id": 12,
+      "name": "Luxury Tax",
+      "description": "A tax on luxury goods, which are considered non-essential."
+    }
+  ]
+}

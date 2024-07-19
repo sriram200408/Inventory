@@ -1,0 +1,48 @@
+{
+  "Categories": [
+    {
+      "name": "productname",
+      "brand": "productbrand",
+      "variant": "productvariant",
+      "id": "8246"
+    },
+    {
+      "id": "e5c1",
+      "productType": "",
+      "name": "maxfresh12",
+      "variant": "150g23",
+      "brand": "colgate232323",
+      "category": "150g4",
+      "cost": null,
+      "price": null,
+      "taxMethod": "",
+      "quantity": null,
+      "description": "",
+      "code": "colgate3"
+    },
+    {
+      "id": "fb59",
+      "name": "beer shampoo",
+      "variant": "500ml",
+      "brand": "park avenue"
+    },
+    {
+      "id": "3645",
+      "name": "skittles",
+      "variant": "50g",
+      "brand": "wrigleys"
+    },
+    {
+      "id": "0af7",
+      "name": "maxfresh",
+      "variant": "150g",
+      "brand": "colgate"
+    },
+    {
+      "id": "ee21",
+      "name": "inspiron",
+      "variant": "14",
+      "brand": "dell"
+    }
+  ]
+}

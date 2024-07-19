@@ -1,0 +1,105 @@
+{
+    "categories": [
+      {
+        "id": 1,
+        "name": "Electronics",
+        "description": "Devices and gadgets"
+      },
+      {
+        "id": 2,
+        "name": "Home Appliances",
+        "description": "Appliances for home use"
+      },
+      {
+        "id": 3,
+        "name": "Books",
+        "description": "Various genres of books"
+      },
+      {
+        "id": 4,
+        "name": "Clothing",
+        "description": "Apparel and accessories"
+      },
+      {
+        "id": 5,
+        "name": "Sports Equipment",
+        "description": "Gear and equipment for sports"
+      },
+      {
+        "id": 6,
+        "name": "Toys",
+        "description": "Toys and games for children"
+      },
+      {
+        "id": 7,
+        "name": "Furniture",
+        "description": "Home and office furniture"
+      },
+      {
+        "id": 8,
+        "name": "Groceries",
+        "description": "Food and household items"
+      },
+      {
+        "id": 9,
+        "name": "Health & Beauty",
+        "description": "Health and beauty products"
+      },
+      {
+        "id": 10,
+        "name": "Automotive",
+        "description": "Vehicles and automotive parts"
+      },
+      {
+        "id": 11,
+        "name": "Garden & Outdoor",
+        "description": "Tools and equipment for gardening and outdoor activities"
+      },
+      {
+        "id": 12,
+        "name": "Pets",
+        "description": "Supplies and accessories for pets"
+      },
+      {
+        "id": 13,
+        "name": "Music",
+        "description": "Instruments and musical accessories"
+      },
+      {
+        "id": 14,
+        "name": "Movies & TV Shows",
+        "description": "Films and television series"
+      },
+      {
+        "id": 15,
+        "name": "Art & Craft",
+        "description": "Materials and tools for art and craft projects"
+      },
+      {
+        "id": 16,
+        "name": "Jewelry",
+        "description": "Ornaments and accessories"
+      },
+      {
+        "id": 17,
+        "name": "Office Supplies",
+        "description": "Products for office use"
+      },
+      {
+        "id": 18,
+        "name": "Video Games",
+        "description": "Games and gaming consoles"
+      },
+      {
+        "id": 19,
+        "name": "Baby Products",
+        "description": "Items for babies and infants"
+      },
+      {
+        "id": 20,
+        "name": "Kitchenware",
+        "description": "Utensils and appliances for the kitchen"
+      }
+    ]
+  }
+  
