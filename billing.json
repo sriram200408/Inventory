@@ -9,6 +9,36 @@
       "price": 1500,
       "quantity": 1,
       "description": "Stylish sunglasses with UV protection"
+    },
+    {
+      "id": "c789",
+      "name": "Sunglasses",
+      "code": "sun123",
+      "category": "Fashion",
+      "cost": 800,
+      "price": 1500,
+      "quantity": 1,
+      "description": "Stylish sunglasses with UV protection"
+    },
+    {
+      "id": "e345",
+      "name": "Vacuum Cleaner",
+      "code": "vac123",
+      "category": "Home Cleaning",
+      "cost": 4500,
+      "price": 7000,
+      "quantity": 1,
+      "description": "High suction power vacuum cleaner"
+    },
+    {
+      "id": "b456",
+      "name": "Running Shoes",
+      "code": "shoe123",
+      "category": "Sportswear",
+      "cost": 5000,
+      "price": 7000,
+      "quantity": 1,
+      "description": "Comfortable running shoes for daily use"
     }
   ]
 }

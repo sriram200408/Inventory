@@ -1,12 +1,53 @@
 {
   "Sales": [
     {
-      "id": "8c91",
-      "date": "12 SEPT 2024",
-      "refno": "1203123110",
-      "customer": "tamanna",
-      "amount": "",
-      "phone": "9822839221"
+      "id": "1c49",
+      "date": "23 Mar 2024",
+      "refno": "19239109",
+      "customer": "thaman",
+      "amount": 14000,
+      "phone": "9234129782",
+      "total": "87"
+    },
+    {
+      "id": "d9f3",
+      "date": "29 Mar 2023",
+      "refno": "1892731278",
+      "customer": "maamam",
+      "amount": 5000,
+      "phone": "8191247314"
+    },
+    {
+      "id": "914d",
+      "date": "31 Jan 2022",
+      "refno": "102319823",
+      "customer": "Drake",
+      "amount": 20500,
+      "phone": "8928293182"
+    },
+    {
+      "id": "4c64",
+      "date": "23 feb 2023",
+      "refno": "89768",
+      "customer": "poppop",
+      "amount": 900,
+      "phone": "8785747876"
+    },
+    {
+      "id": "8316",
+      "date": "23 feb 2004",
+      "refno": "156424587",
+      "customer": "azaz ahmed",
+      "amount": 8500,
+      "phone": "9976547575"
+    },
+    {
+      "id": "52e2",
+      "date": "2024-07-23",
+      "refno": "192910301",
+      "customer": "dagad sai",
+      "amount": 15500,
+      "phone": "989288318"
     }
   ]
 }

@@ -1,12 +1,11 @@
-
-import AddSales from '@/components/sales/addSales'
+import Billing from '@/components/sales/addSales'
 
 import React from 'react'
 
 const SalesPage = () => {
   return (
-    <div>
-      <AddSales/>
+    <div className='p-2'>
+      <Billing/>
     </div>
   )
 }

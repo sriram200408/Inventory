@@ -116,37 +116,9 @@ const Sidebar = ({ children }) => {
                 </ul>
               )}
             </li>
-            <li className="flex flex-col justify-start items-start rounded-xl p-2">
-              <div
-                className="w-full flex flex-row justify-start items-center cursor-pointer"
-                onClick={toggleTransactions}
-              >
-                <FaCheck className="mr-2" />
-                <h3 className="flex-1 ">Transaction</h3>
-                {transactionsOpen ? <FaAngleDown /> : <FaAngleRight />}
-              </div>
-              {transactionsOpen && (
-                <ul className="pl-8 mt-2">
-                  <li className="cursor-pointer flex justify-start items-center hover:bg-blue-200 hover:text-blue-800 rounded-xl p-2 w-full">
-                    <SiSinglestore />
-                    <Link href="/billing" className="ml-2">
-                      Billing
-                    </Link>
-                  </li>
-                  <li className="cursor-pointer flex justify-start items-center hover:bg-blue-200 hover:text-blue-800 rounded-xl p-2">
-                    <SiSinglestore />
-                    <Link href="/payment" className="ml-2">
-                      Payment
-                    </Link>
-                  </li>
-                </ul>
-              )}
-            </li>
+           
 
-            <li className="flex justify-start items-center hover:bg-blue-200 hover:text-blue-800 rounded-xl p-2">
-              <SiHelpscout className="mr-2" />
-              <Link href="/aboutUs">About us</Link>
-            </li>
+            
           </ul>
         </div>
       </aside>

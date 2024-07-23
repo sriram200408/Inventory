@@ -1,33 +1,13 @@
 {
   "Products": [
     {
-      "id": "e093",
-      "name": "colgate maxfresh",
-      "code": "12344321",
-      "category": "colgate232323-maxfresh12",
-      "cost": 200,
-      "price": 1000,
-      "quantity": 1,
-      "description": "red colour toothpaste"
-    },
-    {
-      "id": "a123",
-      "name": "Bluetooth Speaker",
-      "code": "bt123",
-      "category": "Audio",
-      "cost": 1500,
-      "price": 3000,
-      "quantity": 4,
-      "description": "Portable Bluetooth speaker with high-quality sound"
-    },
-    {
       "id": "b456",
       "name": "Running Shoes",
       "code": "shoe123",
       "category": "Sportswear",
       "cost": 5000,
       "price": 7000,
-      "quantity": 5,
+      "quantity": 1,
       "description": "Comfortable running shoes for daily use"
     },
     {
@@ -37,7 +17,7 @@
       "category": "Fashion",
       "cost": 800,
       "price": 1500,
-      "quantity": 17,
+      "quantity": 12,
       "description": "Stylish sunglasses with UV protection"
     },
     {
@@ -47,7 +27,7 @@
       "category": "Food",
       "cost": 1200,
       "price": 2000,
-      "quantity": 50,
+      "quantity": 48,
       "description": "Healthy and nutritious organic almonds"
     },
     {
@@ -57,7 +37,7 @@
       "category": "Home Cleaning",
       "cost": 4500,
       "price": 7000,
-      "quantity": 8,
+      "quantity": 5,
       "description": "High suction power vacuum cleaner"
     },
     {
@@ -77,7 +57,7 @@
       "category": "Cosmetics",
       "cost": 300,
       "price": 900,
-      "quantity": 100,
+      "quantity": 98,
       "description": "Matte finish long-lasting lipstick"
     },
     {

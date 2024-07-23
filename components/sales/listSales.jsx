@@ -334,51 +334,17 @@ export function ListSales() {
                   }
                   className="mb-2 p-2 border border-gray-300 rounded"
                 />
+                
                 <input
                   type="text"
-                  placeholder="Total"
-                  value={editProduct.total}
+                  placeholder="Phone no"
+                  value={editProduct.phone}
                   onChange={(e) =>
-                    setEditProduct({ ...editProduct, total: e.target.value })
+                    setEditProduct({ ...editProduct, phone: e.target.value })
                   }
                   className="mb-2 p-2 border border-gray-300 rounded"
                 />
-                <input
-                  type="text"
-                  placeholder="Payment Status"
-                  value={editProduct.paymentStatus}
-                  onChange={(e) =>
-                    setEditProduct({
-                      ...editProduct,
-                      paymentStatus: e.target.value,
-                    })
-                  }
-                  className="mb-2 p-2 border border-gray-300 rounded"
-                />
-                <input
-                  type="text"
-                  placeholder="Biller"
-                  value={editProduct.biller}
-                  onChange={(e) =>
-                    setEditProduct({
-                      ...editProduct,
-                      biller: e.target.value,
-                    })
-                  }
-                  className="mb-2 p-2 border border-gray-300 rounded"
-                />
-                <input
-                  type="number"
-                  placeholder="Order Tax"
-                  value={editProduct.orderTax}
-                  onChange={(e) =>
-                    setEditProduct({
-                      ...editProduct,
-                      orderrTax : (e.target.value),
-                    })
-                  }
-                  className="mb-2 p-2 border border-gray-300 rounded"
-                />
+                
                 <div className="flex justify-end">
                   <button
                     type="button"

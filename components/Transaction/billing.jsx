@@ -12,6 +12,12 @@ import {
 } from "@/components/ui/table";
 import { useRouter } from "next/navigation";
 import axios from "axios";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Button } from "@/components/ui/button";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { redirect } from "next/navigation";
 
 export default function Billing() {
   const [serialNo, setSerialNo] = useState("");
@@ -24,6 +30,43 @@ export default function Billing() {
   const [searchQuery, setSearchQuery] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState(5);
+  const [date, setDate] = useState('');
+  const [refno, setRefno] = useState("");
+  const [customer, setCustomer] = useState("");
+  const [amount, setAmount] = useState("");
+  const [submitted, setSubmitted] = useState(false);
+  const [phone, setPhone] = useState("")
+
+  
+
+  const notify = () => toast("Success");
+  const errorify = () => toast("Error submitting data");
+
+
+
+  async function handleSubmit(event) {
+    event.preventDefault();
+    const productData = {
+      date: date,
+      refno: refno,
+      customer: customer,
+      amount: amount,
+      phone:phone,
+    };
+
+    try {
+      await axios.post("http://localhost:3033/Sales", productData);
+      notify();
+      setTimeout(() => {
+        setSubmitted(true);
+      }, 1000);
+    } catch (error) {
+      errorify();
+    }
+  }
+  if (submitted) {
+    redirect(`/saleslist`);
+  }
 
   const router = useRouter();
 
@@ -160,6 +203,82 @@ export default function Billing() {
 
   return (
     <>
+    <div id="areawrap" className="rounded-xld border-black m-4 z-0">
+      <ToastContainer />
+      <div>
+        <h2 className="font-bold">Add Sales</h2>
+      </div>
+      <form onSubmit={handleSubmit}>
+        <div className="mt-12">
+          <Label className="mb-5">Date</Label>
+          <Input
+            
+            value={date}
+            onChange={(e) => setDate(e.target.value)}
+            className="mt-1"
+         />
+          
+        </div>
+        <div className="flex mt-10">
+          <div className="col-span-1 w-6/12">
+            <Label>Enter Ref No</Label>
+            <Input
+              className="mt-1"
+              value={refno}
+              onChange={(e) => setRefno(e.target.value)}
+              required
+            />
+          </div>
+          
+        </div>
+        <div className="mt-7 flex">
+          <div className="w-6/12">
+            <Label className="mb-5">Customer</Label>
+            <Input
+              onChange={(e) => setCustomer(e.target.value)}
+              value={customer}
+              className="mt-1"
+            >
+            </Input>
+          </div>
+          <div className="w-6/12 ml-10">
+            <Label className="mb-5">Phone no</Label>
+            <Input
+              onChange={(e) => {setPhone(e.target.value)}}
+              value={phone}
+              className="mt-1"
+            >
+            </Input>
+          </div>
+        </div>
+        
+        
+       
+        <div className="flex">
+          <Button
+            type="submit"
+            variant="outline"
+            className="mt-5 hover:bg-white hover:text-green-500 bg-green-500 text-white"
+          >
+            Add Sale
+          </Button>
+          <Button
+            type="button"
+            variant="outline"
+            className="mt-5 ml-5 hover:bg-white hover:text-blue-600 bg-blue-600 text-white"
+            onClick={() => {
+              setDate("");
+              setRefno("");
+              setCustomer("");
+              setAmount("");
+              setPhone("");
+            }}
+          >
+            Reset
+          </Button>
+        </div>
+      </form>
+    </div>
       <div className=" p-3 h-20 items-center  flex justify-center  w-full m-5 mb-10 ">
         <label >Enter Serial No</label>
         <input 
