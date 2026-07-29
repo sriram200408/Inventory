@@ -1,16 +1,6 @@
 {
   "Products": [
     {
-      "id": "b456",
-      "name": "Running Shoes",
-      "code": "shoe123",
-      "category": "Sportswear",
-      "cost": 5000,
-      "price": 7000,
-      "quantity": 1,
-      "description": "Comfortable running shoes for daily use"
-    },
-    {
       "id": "c789",
       "name": "Sunglasses",
       "code": "sun123",
@@ -27,7 +17,7 @@
       "category": "Food",
       "cost": 1200,
       "price": 2000,
-      "quantity": 48,
+      "quantity": 46,
       "description": "Healthy and nutritious organic almonds"
     },
     {
@@ -37,7 +27,7 @@
       "category": "Home Cleaning",
       "cost": 4500,
       "price": 7000,
-      "quantity": 5,
+      "quantity": 4,
       "description": "High suction power vacuum cleaner"
     },
     {
@@ -69,6 +59,32 @@
       "price": 1200,
       "quantity": 199,
       "description": "Boosts immunity and improves skin health"
+    },
+    {
+      "id": "5fcd",
+      "productType": "",
+      "name": "toothpaste",
+      "code": "21343",
+      "barcodeSymbology": "",
+      "category": "colgate232323-maxfresh12",
+      "cost": 1000,
+      "price": 10000,
+      "taxMethod": "",
+      "quantity": 23,
+      "description": "hi"
+    },
+    {
+      "id": "b860",
+      "productType": "",
+      "name": "console",
+      "code": "102910299",
+      "barcodeSymbology": "",
+      "category": "productbrand-productname",
+      "cost": 1900,
+      "price": 2500,
+      "taxMethod": "",
+      "quantity": 5,
+      "description": "ajbflans"
     }
   ]
 }
